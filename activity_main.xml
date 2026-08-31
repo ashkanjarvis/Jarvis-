@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/jarvis_dark_blue">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/jarvis_ring"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="J.A.R.V.I.S"
+        android:textColor="@color/jarvis_blue"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btn_grant_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/grant_overlay"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_grant_mic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/grant_mic"
+        android:layout_marginBottom="12dp" />
+
+    <Button
+        android:id="@+id/btn_toggle_jarvis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_jarvis" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/get_api_key_help"
+        android:textColor="@color/jarvis_blue"
+        android:textSize="11sp"
+        android:layout_marginTop="28dp" />
+
+    <EditText
+        android:id="@+id/et_api_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/api_key_hint"
+        android:textColor="@color/white"
+        android:textColorHint="#8000D2FF"
+        android:inputType="textPassword"
+        android:layout_marginTop="6dp" />
+
+    <Button
+        android:id="@+id/btn_save_key"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_api_key"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/white"
+        android:text="" />
+
+</LinearLayout>
