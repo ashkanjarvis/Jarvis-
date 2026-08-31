@@ -1,0 +1,17 @@
+workflows:
+  android-build:
+    name: Android APK Build
+    max_build_duration: 60
+    environment:
+      vars:
+        PACKAGE_NAME: "com.example.jarvis"
+      flutter: stable
+
+    scripts:
+      - name: Build APK
+        script: |
+          ./gradlew assembleDebug
+
+    artifacts:
+      - app/build/outputs/**/*.apk
+      
