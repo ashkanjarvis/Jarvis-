@@ -5,12 +5,9 @@ workflows:
     environment:
       java: 17
     scripts:
-      - name: Grant execution rights
-        script: |
-          chmod +x gradlew || true
       - name: Build debug APK
         script: |
-          ./gradlew assembleDebug || gradle assembleDebug
+          gradle assembleDebug
     artifacts:
       - build/outputs/apk/debug/*.apk
       - app/build/outputs/apk/debug/*.apk
