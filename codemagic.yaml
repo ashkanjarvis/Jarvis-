@@ -7,9 +7,11 @@ workflows:
         PACKAGE_NAME: "com.jarvis.assistant"
       java: 17
     scripts:
+      - name: Generate pinned Gradle wrapper
+        script: |
+          gradle wrapper --gradle-version 8.4
       - name: Build debug APK
         script: |
-          gradle assembleDebug
+          ./gradlew assembleDebug --stacktrace
     artifacts:
       - app/build/outputs/**/*.apk
-      
