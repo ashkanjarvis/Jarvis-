@@ -7,9 +7,20 @@ workflows:
         PACKAGE_NAME: "com.jarvis.assistant"
       java: 17
     scripts:
-      - name: Generate pinned Gradle wrapper
+      - name: Setup pinned Gradle wrapper (bypasses system Gradle entirely)
         script: |
-          gradle wrapper --gradle-version 8.4
+          mkdir -p gradle/wrapper
+          curl -L -o gradle/wrapper/gradle-wrapper.jar https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradle/wrapper/gradle-wrapper.jar
+          curl -L -o gradlew https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradlew
+          curl -L -o gradlew.bat https://raw.githubusercontent.com/gradle/gradle/v8.4.0/gradlew.bat
+          chmod +x gradlew
+          cat > gradle/wrapper/gradle-wrapper.properties << 'PROPS'
+          distributionBase=GRADLE_USER_HOME
+          distributionPath=wrapper/dists
+          distributionUrl=https\://services.gradle.org/distributions/gradle-8.4-bin.zip
+          zipStoreBase=GRADLE_USER_HOME
+          zipStorePath=wrapper/dists
+          PROPS
       - name: Build debug APK
         script: |
           ./gradlew assembleDebug --stacktrace
